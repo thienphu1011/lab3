@@ -5,40 +5,35 @@
 #include "main.h"
 using namespace std;
 
-void searchAndDelete(){
+void searchAndDelete()
+{
+    fstream infile;
     string name;
-    string line ;
-    ifstream infile;
-    ofstream outfile;
-    char choice;
-    cout <<"Enter the file name that need to display :";
-    cin.ignore();
-    getline (cin,name);
-    string filename=name +".txt";
-    infile.open (filename.c_str());
-
-    if (infile){
-        cout <<"File found. Contents of the file:\n";
-        while (getline (infile,line)){
-            cout <<line<<endl;
-        }
-        infile.close();
-    }
-    else {
-        cout <<"Error\n";
-    }
+    string line;
     char choose;
-    cout <<"Do you want to delete this file ? (y/n) :";
+    cout << "Enter the file name that need to be displayed: ";
+    cin.ignore();
+    getline(cin, name);
+    string filename = name + ".txt";
+    infile.open(filename.c_str());
+    if(infile)
+    {
+        while(getline(infile, line))
+             cout << line << endl;
+        infile.close();
+    }else cout << "Error. File cannot be read" << endl;
+    
+    cout << "Do you want to delete this file? (y/n): ";
     cin >> choose;
-    if (choose=='y'){
-        if (remove(filename.c_str())==0){
-            cout <<"File deleted successfully.\n";
+    if(choose == 'y' || choose == 'Y')
+    {
+        if (remove(filename.c_str())==0)
+        {
+            cout << "File " << filename << "deleted successfully" << endl;
+        }else 
+        {
+            cout << "Error. Unable to delete file " << filename << endl;
         }
-        else {
-            cout <<"Error deleting file.\n";
-        }
-    }
-    else if (choose=='n'){
-        cout <<"The file "<<filename<<" is not deleted.\n";
-    }
+    }else if(choose == 'n' || choose == 'N')
+        cout << "File " << filename << " is not deleted"<<endl;
 }
