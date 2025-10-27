@@ -5,7 +5,6 @@
 #include "main.h"
 using namespace std;
 
-
 void displayContents(){
     string line ;
     string name;
