@@ -20,6 +20,7 @@ void searchAndDisplay();
 void searchAndDelete();
 void searchAndChanging();
 void displayContents();
+void updateListFile() ;
 
 
 

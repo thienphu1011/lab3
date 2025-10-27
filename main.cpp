@@ -34,7 +34,9 @@ int main() {
                 searchAndChanging();
                 break;
             case 5:
+                updateListFile();
                 displayContents();
+                
                 break;
             case 6:
                 cout << "Exiting the program. Goodbye!\n";

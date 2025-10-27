@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <limits>
+#include <iomanip>
 #include "main.h"
 using namespace std;
 
@@ -53,7 +54,7 @@ void getRecord(){
     outfile<<"ZIP code: "<<record.zip<<endl;
     outfile<<"Phone number: "<<record.phone<<endl;
     outfile<<"Account balance: "<<record.balance<<endl;
-    outfile<<"Date of last payment: "<<record.lastpayment<<endl;
+    outfile<<"Date of last payment: "<<fixed<<setprecision(0)<<record.lastpayment<<endl;
     outfile.close();
     cout <<"Account file "<<filePath<<" saved successfully.\n";
 }

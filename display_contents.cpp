@@ -5,27 +5,51 @@
 #include "main.h"
 using namespace std;
 
-void displayContents(){
-    string line ;
-    string name;
-    ifstream infile;
-    ofstream outfile;
-    char choice;
-    cout <<"Enter the account name of customer to display :";
-    cin.ignore();
-    getline (cin,name);
-    string filename=name +".txt";
-    infile.open (filename.c_str());
+void displayContents() {
+    ifstream list("list.txt");
+    if (!list) {
+        cout << "Error opening list.txt file.\n";
+        return;
+    }
 
-    if (infile){
-        cout <<"Customer found.Contents of the file:\n";
-        while (getline (infile,line)){
-            cout <<line<<endl;
+    string name;
+    int count = 0;
+
+    while (getline(list, name)) {
+        // bỏ qua dòng rỗng trong list.txt
+        if (name.empty()) continue;
+
+        // nếu mục trong list.txt CHƯA có .txt thì tự thêm
+        string filename = name;
+        if (filename.size() < 4 || filename.substr(filename.size() - 4) != ".txt") {
+            filename += ".txt";
         }
+
+        cout << ++count << ". Displaying contents of file: " << filename << "\n";
+
+        ifstream infile(filename.c_str());
+        if (!infile) {
+            cout << "   (Error opening file)\n\n";
+            continue;
+        }
+
+        string line;
+        int lineCount = 0;
+        while (getline(infile, line)) {
+            // xử lý ký tự \r nếu file được tạo trên Windows
+            if (!line.empty() && line.back() == '\r') line.pop_back();
+            cout << "   " << line << "\n";
+            ++lineCount;
+        }
+        if (lineCount == 0) cout << "   (Empty file)\n";
+
+        cout << "-------------------------------------\n";
         infile.close();
     }
-    else {
-        cout <<"Error\n";
-        
+
+    if (count == 0) {
+        cout << "No customers file listed.\n";
     }
 }
+  
+    
