@@ -7,9 +7,9 @@
 using namespace std;
 
 void getRecord(){
-    cout<<"Enter the account name :";
     string acc;
     customer record;
+    cout<<"Enter the account name :";
     cin.ignore();
     getline (cin,acc);
     string filePath = acc + ".txt";
@@ -53,7 +53,7 @@ void getRecord(){
     outfile<<"State: "<<record.state<<endl;
     outfile<<"ZIP code: "<<record.zip<<endl;
     outfile<<"Phone number: "<<record.phone<<endl;
-    outfile<<"Account balance: "<<record.balance<<endl;
+    outfile<<"Account balance: $ "<<record.balance<<endl;
     outfile<<"Date of last payment: "<<fixed<<setprecision(0)<<record.lastpayment<<endl;
     outfile.close();
     cout <<"Account file "<<filePath<<" saved successfully.\n";
