@@ -53,8 +53,8 @@ string getRecord(){
     outfile<<"State: "<<record.state<<endl;
     outfile<<"ZIP code: "<<record.zip<<endl;
     outfile<<"Phone number: "<<record.phone<<endl;
-    outfile<<"Account balance: $"<<record.balance<<endl;
-    outfile<<"Date of last payment: "<<fixed<<setprecision(0)<<record.lastpayment<<endl;
+    outfile<<"Account balance: $"<<fixed<<setprecision(0)<<record.balance<<endl;
+    outfile<<"Date of last payment: "<<record.lastpayment<<endl;
     outfile.close();
     cout <<"Account file "<<filePath<<" saved successfully.\n";
     return filePath;
