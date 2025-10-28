@@ -30,20 +30,19 @@ int main() {
             case 3:
                 searchAndDelete();
                 break;
-                case 4:
+            case 4:
                 searchAndChanging();
                 break;
             case 5:
                 updateListFile();
                 displayContents();
-                
                 break;
             case 6:
                 cout << "Exiting the program. Goodbye!\n";
             default:
                 cout << "Invalid option! Please try again.\n";
         }
-    }while(option != 6);
+    } while(option != 6);
 
     return 0;
 }

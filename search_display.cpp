@@ -13,21 +13,18 @@ void searchAndDisplay(){
     char choice;
     cout <<"Enter the account name of customer to display :";
     cin.ignore();
-    getline (cin,name);
+    getline(cin,name);
     string filename=name +".txt";
-    infile.open (filename.c_str());
+    infile.open(filename.c_str());
 
     if (infile){
-        cout <<"Customer found.Contents of the file:\n";
-        while (getline (infile,line)){
-            cout <<line<<endl;
+        cout << "Customer found.Contents of the file:\n";
+        while (getline(infile,line)){
+            cout << line <<endl;
         }
         infile.close();
     }
     else {
         cout <<"Error\n";
-        
     }
-
-
 }

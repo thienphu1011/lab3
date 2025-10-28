@@ -13,7 +13,7 @@ void searchAndChanging(){
     char choice;
     cout<<"Enter the file name that neeeds to be displayed and changed: ";
     cin.ignore();
-    getline (cin,name);
+    getline(cin,name);
     string filename=name +".txt";
     infile.open (filename.c_str());
     if (infile){
@@ -29,7 +29,6 @@ void searchAndChanging(){
     else {
         cout <<"Error\n";
         return;
-        
     }
     
     cout <<"Which line do you want to change (Enter 0 to exit)?: ";
@@ -61,8 +60,6 @@ void searchAndChanging(){
             }else {
                 cout <<"Error opening file for writing.\n";
             }
-            
-        
     }
     else if (lineNumber ==0){
         cout <<"No changes made. Exiting.\n";

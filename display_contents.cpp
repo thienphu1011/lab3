@@ -16,11 +16,10 @@ void displayContents() {
     int count = 0;
 
     while (getline(list, name)) {
-        // bỏ qua dòng rỗng trong list.txt
         if (name.empty()) continue;
 
-        // nếu mục trong list.txt CHƯA có .txt thì tự thêm
         string filename = name;
+        
         if (filename.size() < 4 || filename.substr(filename.size() - 4) != ".txt") {
             filename += ".txt";
         }

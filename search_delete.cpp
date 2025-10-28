@@ -21,19 +21,22 @@ void searchAndDelete()
         while(getline(infile, line))
              cout << line << endl;
         infile.close();
-    }else cout << "Error. File cannot be read" << endl;
+    }
+    else cout << "Error. File cannot be read" << endl;
     
     cout << "Do you want to delete this file? (y/n): ";
     cin >> choose;
     if(choose == 'y' || choose == 'Y')
     {
-        if (remove(filename.c_str())==0)
+        if(remove(filename.c_str())==0)
         {
             cout << "File " << filename << "deleted successfully" << endl;
-        }else 
+        }
+        else 
         {
             cout << "Error. Unable to delete file " << filename << endl;
         }
-    }else if(choose == 'n' || choose == 'N')
-        cout << "File " << filename << " is not deleted"<<endl;
+    }
+    else if(choose == 'n' || choose == 'N')
+        cout << "File " << filename << " is not deleted" <<endl;
 }
