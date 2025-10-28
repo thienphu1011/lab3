@@ -1,13 +1,12 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <limits>
 #include "main.h"
 using namespace std;
 
 void searchAndDelete()
 {
-    fstream infile;
+    ifstream infile;
     string name;
     string line;
     char choose;
@@ -23,17 +22,19 @@ void searchAndDelete()
         infile.close();
     }else cout << "Error. File cannot be read" << endl;
     
-    cout << "Do you want to delete this file? (y/n): ";
+    cout << "Do you want to delete this file? (y/n)";
     cin >> choose;
     if(choose == 'y' || choose == 'Y')
     {
         if (remove(filename.c_str())==0)
         {
-            cout << "File " << filename << "deleted successfully" << endl;
+            cout << "File " << filename << " deleted successfully" << endl;
         }else 
         {
             cout << "Error. Unable to delete file " << filename << endl;
         }
     }else if(choose == 'n' || choose == 'N')
-        cout << "File " << filename << " is not deleted"<<endl;
+        cout << "File " << filename << "is not deleted";
+    else if(choose != 'y' || choose != 'Y' || choose != 'n' || choose != 'N')
+        cout << "Error. Unable to delete file " << filename << endl;
 }
