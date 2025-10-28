@@ -18,11 +18,11 @@ void searchAndChanging(){
     infile.open (filename.c_str());
     if (infile){
         cout <<"File found. Contents of the file:\n";
-        for (int i=0; i<8 && getline (infile,line[i]); i++){
+        for (int i=1; i<=8 && getline (infile,line[i]); i++){
             if (!line[i].empty()&& line[i].back()=='\r'){ //new
                 line[i].pop_back();//new
             }
-            cout <<i+1<<"."<<line[i]<<endl;
+            cout <<i<<"."<<line[i]<<endl;
         }
         infile.close();
     }
@@ -37,23 +37,23 @@ void searchAndChanging(){
     cin >> lineNumber;
     
 
-    if (lineNumber >0 && lineNumber <=8 && !line[lineNumber -1].empty()){
+    if (lineNumber >0 && lineNumber <=8 && !line[lineNumber].empty()){
         cin.ignore();
         cout <<"Enter the new content for line "<<lineNumber<<": ";
         string newValue;
         getline(cin, newValue);
 
     // Giữ phần đầu (label) đến dấu ':' rồi nối với nội dung mới
-    size_t pos = line[lineNumber - 1].find(':');
+    size_t pos = line[lineNumber].find(':');
     if (pos != string::npos) {
-        string label = line[lineNumber - 1].substr(0, pos + 1); // giữ phần nhãn
-        line[lineNumber - 1] = label + " " + newValue;          // ghép lại
+        string label = line[lineNumber].substr(0, pos + 1); // giữ phần nhãn
+        line[lineNumber] = label + " " + newValue;          // ghép lại
     } else {
-        line[lineNumber - 1] = newValue; // fallback nếu dòng không có dấu ':'
+        line[lineNumber] = newValue; // fallback nếu dòng không có dấu ':'
     }
         outfile.open (filename.c_str());
         if(outfile){
-            for (int i=0; i<8 && !line[i].empty(); i++){
+            for (int i=1; i<=8 && !line[i].empty(); i++){
                 outfile <<line[i]<<endl;
                 }
                 outfile.close();
