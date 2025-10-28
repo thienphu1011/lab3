@@ -7,7 +7,7 @@
 using namespace std;
 
 string getRecord(){
-    cout<<"Enter the account name :";
+    cout<<"Enter the account name: ";
     string acc;
     customer record;
     cin.ignore();
