@@ -34,7 +34,7 @@ void searchAndDelete()
             cout << "Error. Unable to delete file " << filename << endl;
         }
     }else if(choose == 'n' || choose == 'N')
-        cout << "File " << filename << "is not deleted";
+        cout << "File " << filename << " is not deleted"<<endl;
     else if(choose != 'y' || choose != 'Y' || choose != 'n' || choose != 'N')
         cout << "Error. Unable to delete file " << filename << endl;
 }
