@@ -6,7 +6,7 @@
 #include "main.h"
 using namespace std;
 
-void getRecord(){
+string getRecord(){
     cout<<"Enter the account name :";
     string acc;
     customer record;
@@ -23,7 +23,7 @@ void getRecord(){
         if (tolower(choice) != 'y'){
             cout <<"Operation cancelled. Returning to main menu.\n";
             infile.close();
-            return;
+            return "none.txt";
         }
     }
     infile.close();
@@ -45,7 +45,7 @@ void getRecord(){
     outfile.open(filePath.c_str());
     if(!outfile){
         cout <<"Error creating file "<<filePath<<".\n";
-        return;
+        return "none.txt";
     }
     outfile<<"Name: "<<record.name<<endl;
     outfile<<"Address: "<<record.address<<endl;
@@ -57,4 +57,5 @@ void getRecord(){
     outfile<<"Date of last payment: "<<fixed<<setprecision(0)<<record.lastpayment<<endl;
     outfile.close();
     cout <<"Account file "<<filePath<<" saved successfully.\n";
+    return filePath;
 }

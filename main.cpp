@@ -19,10 +19,12 @@ int main() {
         cout << "6. Exit\n";
         cout << "Enter your choice: ";
         cin >> option;
+        string file_name;
 
         switch(option) {
             case 1:
-                getRecord();
+                file_name = getRecord();
+                updateListFile(file_name);
                 break;
             case 2:
                 searchAndDisplay();
@@ -34,7 +36,7 @@ int main() {
                 searchAndChanging();
                 break;
             case 5:
-                updateListFile();
+
                 displayContents();
                 
                 break;

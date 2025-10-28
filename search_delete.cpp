@@ -11,7 +11,7 @@ void searchAndDelete()
     string name;
     string line;
     char choose;
-    cout << "Enter the file name that need to be displayed: ";
+    cout << "Enter the account name that need to be displayed: ";
     cin.ignore();
     getline(cin, name);
     string filename = name + ".txt";

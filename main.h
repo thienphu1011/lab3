@@ -15,12 +15,12 @@ struct customer{
     string lastpayment;
 };
 
-void getRecord();
+string getRecord();
 void searchAndDisplay();
 void searchAndDelete();
 void searchAndChanging();
 void displayContents();
-void updateListFile() ;
+void updateListFile(string file_name) ;
 
 
 

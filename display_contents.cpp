@@ -21,9 +21,9 @@ void displayContents() {
 
         // nếu mục trong list.txt CHƯA có .txt thì tự thêm
         string filename = name;
-        if (filename.size() < 4 || filename.substr(filename.size() - 4) != ".txt") {
-            filename += ".txt";
-        }
+        // if (filename.size() < 4 || filename.substr(filename.size() - 4) != ".txt") {
+        //     filename += ".txt";
+        // }
 
         cout << ++count << ". Displaying contents of file: " << filename << "\n";
 
