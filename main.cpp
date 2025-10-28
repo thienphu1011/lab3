@@ -32,7 +32,7 @@ int main() {
             case 3:
                 searchAndDelete();
                 break;
-                case 4:
+            case 4:
                 searchAndChanging();
                 break;
             case 5:

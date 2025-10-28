@@ -27,12 +27,12 @@ string getRecord(){
         }
     }
     infile.close();
-    cout <<"Enter the name :"; getline (cin,record.name);
-    cout <<"Enter the address :"; getline (cin,record.address);
-    cout <<"Enter the city :"; getline (cin,record.city);
-    cout <<"Enter the state :"; getline (cin,record.state);
-    cout <<"Enter the ZIP code :"; getline (cin,record.zip);
-    cout <<"Enter the phone number :"; getline (cin,record.phone);
+    cout <<"Enter the name: "; getline (cin,record.name);
+    cout <<"Enter the address: "; getline (cin,record.address);
+    cout <<"Enter the city: "; getline (cin,record.city);
+    cout <<"Enter the state: "; getline (cin,record.state);
+    cout <<"Enter the ZIP code: "; getline (cin,record.zip);
+    cout <<"Enter the phone number: "; getline (cin,record.phone);
 
     while (true){
     cout <<"Enter the account balance :"; cin >> record.balance;
@@ -41,7 +41,7 @@ string getRecord(){
     }
 
     cin.ignore();
-    cout <<"Enter the date of last payment :"; getline (cin,record.lastpayment);
+    cout <<"Enter the date of last payment: "; getline (cin,record.lastpayment);
     outfile.open(filePath.c_str());
     if(!outfile){
         cout <<"Error creating file "<<filePath<<".\n";
@@ -53,7 +53,7 @@ string getRecord(){
     outfile<<"State: "<<record.state<<endl;
     outfile<<"ZIP code: "<<record.zip<<endl;
     outfile<<"Phone number: "<<record.phone<<endl;
-    outfile<<"Account balance: "<<record.balance<<endl;
+    outfile<<"Account balance: $"<<record.balance<<endl;
     outfile<<"Date of last payment: "<<fixed<<setprecision(0)<<record.lastpayment<<endl;
     outfile.close();
     cout <<"Account file "<<filePath<<" saved successfully.\n";
