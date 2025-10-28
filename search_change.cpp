@@ -11,7 +11,7 @@ void searchAndChanging(){
     ifstream infile;
     ofstream outfile;
     char choice;
-    cout<<"Enter the file name that neeeds to be displayed and changed: ";
+    cout<< "Enter the file name that neeeds to be displayed and changed: ";
     cin.ignore();
     getline(cin,name);
     string filename=name +".txt";
@@ -31,14 +31,14 @@ void searchAndChanging(){
         return;
     }
     
-    cout <<"Which line do you want to change (Enter 0 to exit)?: ";
+    cout << "Which line do you want to change (Enter 0 to exit)?: ";
     int lineNumber;
     cin >> lineNumber;
     
 
     if (lineNumber >0 && lineNumber <=8 && !line[lineNumber -1].empty()){
         cin.ignore();
-        cout <<"Enter the new content for line "<<lineNumber<<": ";
+        cout << "Enter the new content for line " << lineNumber << ": ";
         string newValue;
         getline(cin, newValue);
 
@@ -56,15 +56,15 @@ void searchAndChanging(){
                 outfile <<line[i]<<endl;
                 }
                 outfile.close();
-                cout <<"Line "<<lineNumber<<" updated successfully.\n";
+                cout << "Line " <<lineNumber<< " updated successfully.\n";
             }else {
-                cout <<"Error opening file for writing.\n";
+                cout << "Error opening file for writing.\n";
             }
     }
     else if (lineNumber ==0){
-        cout <<"No changes made. Exiting.\n";
+        cout << "No changes made. Exiting.\n";
     }
     else {
-        cout <<"Invalid line number.\n";
+        cout << "Invalid line number.\n";
     }
 }

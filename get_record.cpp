@@ -35,13 +35,13 @@ void getRecord(){
     cout <<"Enter the phone number : "; getline (cin,record.phone);
 
     while (true){
-    cout <<"Enter the account balance : "; cin >> record.balance;
-    if (record.balance >=0) break;
-    else cout <<"Invalid balance! Please enter a non-negative value.\n";    
+        cout <<"Enter the account balance : "; cin >> record.balance;
+        if (record.balance >=0) break;
+        else cout <<"Invalid balance! Please enter a non-negative value.\n";    
     }
 
     cin.ignore();
-    cout <<"Enter the date of last payment : "; getline (cin,record.lastpayment);
+    cout <<"Enter the date of last payment : "; getline(cin,record.lastpayment);
     outfile.open(filePath.c_str());
     if(!outfile){
         cout <<"Error creating file "<< filePath <<".\n";
